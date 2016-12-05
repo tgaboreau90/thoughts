@@ -1,4 +1,3 @@
-import random
 from gen_thought import *
 
 thought = gen_thought(exclude = 'recents.txt')

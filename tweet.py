@@ -1,4 +1,3 @@
-import random
 from twitter import *
 from gen_thought import *
 
