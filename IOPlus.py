@@ -1,7 +1,4 @@
-import pyodbc
-import pymysql
 import csv
-from openpyxl import Workbook
 
 class LocalCsv:
     def __init__(self, fileName = None, directory = None):
