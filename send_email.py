@@ -10,9 +10,7 @@ from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 
-username = "tommy@yum.co.uk"
-password = "d1lb3rt"
-emailfrom = "tommy@yum.co.uk"
+emailfrom = "nonsence@tommy.com"
 msg = MIMEMultipart()
 msg["From"] = emailfrom
 msg["To"] = ""
@@ -32,8 +30,7 @@ Follow https://twitter.com/GreatIdeasDaily for more! :)
 msg.attach (MIMEText(text))
      
  
-server = smtplib.SMTP("10.48.0.2")
-server.login(username,password)
+server = smtplib.SMTP("localhost")
 for address in recipients:
     server.sendmail(emailfrom, address, msg.as_string())
 server.quit()
