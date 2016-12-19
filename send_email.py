@@ -1,6 +1,9 @@
+'emails each address in mailing.txt'
+
 from gen_thought import *
 import time
 
+'generates random thought'
 thought = gen_thought(exclude = 'recents.txt')
 
 
@@ -11,6 +14,7 @@ from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 
+'builds email object'
 emailfrom = "nonsense@tommy.com"
 msg = MIMEMultipart()
 msg["From"] = emailfrom
@@ -33,7 +37,9 @@ msg.attach (MIMEText(text))
  
 server = smtplib.SMTP("localhost")
 for address in recipients:
-    server.sendmail(emailfrom, address, msg.as_string())
-    time.sleep(10)
+	'sends email to each recipient'
+        server.sendmail(emailfrom, address, msg.as_string())
+	'waits 10 seconds between each to avoid clogging up mail queue'
+        time.sleep(10)
 server.quit()
 

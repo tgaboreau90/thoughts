@@ -1,3 +1,6 @@
+'''This is a multi-purpose module i have used for various projects
+currently 'thoughts' only uses the OpenToDictList function.
+'''
 import csv
 
 class LocalCsv:
