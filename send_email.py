@@ -1,4 +1,5 @@
 from gen_thought import *
+import time
 
 thought = gen_thought(exclude = 'recents.txt')
 
@@ -10,7 +11,7 @@ from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 
-emailfrom = "nonsence@tommy.com"
+emailfrom = "nonsense@tommy.com"
 msg = MIMEMultipart()
 msg["From"] = emailfrom
 msg["To"] = ""
@@ -33,5 +34,6 @@ msg.attach (MIMEText(text))
 server = smtplib.SMTP("localhost")
 for address in recipients:
     server.sendmail(emailfrom, address, msg.as_string())
+    time.sleep(10)
 server.quit()
 
